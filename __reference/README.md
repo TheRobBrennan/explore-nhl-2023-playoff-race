@@ -209,3 +209,15 @@ If we look at a similar subset of data for Winnipeg - currently in second place 
           "lastUpdated": "2023-03-04T05:50:39Z"
         },
 ```
+
+### Experiment 02 - How might we view team points changing over a period of time?
+
+Let's explore using the `schedule` endpoint to see if we can dynamically access points earned for games earlier in the season.
+
+#### NHL 2022-2023 schedule
+
+Let's look at the URL - [https://statsapi.web.nhl.com/api/v1/schedule?season=20222023](https://statsapi.web.nhl.com/api/v1/schedule?season=20222023) - and the [JSON](./json/schedule-complete-experiment-02.json) data it provides:
+
+![](./images/experiment-02-safari-example-nhl-schedule-data.png)
+
+Swing and a miss. We don't have any game details available to us. Let's try another approach.
