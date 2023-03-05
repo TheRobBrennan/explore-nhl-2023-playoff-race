@@ -240,7 +240,7 @@ The 2022-2023 NHL season's regular season started on October 7th, 2022.
 
 🎉 We can use this data to iterate over each game and dynamically keep track of points for each team in the conference. 🎉
 
-##### Filter schedule to specific teams only
+##### Filter schedule to specific teams
 
 We can filter the results to specific team ID by adding a new `?teamId=55` parameter to our URL - [https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R&teamId=55](https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R&teamId=55) - and review the [JSON](./json/schedule-complete-expand-schedule-linescore-regular-season-games-seattle-kraken-experiment-02.json) data it provides:
 
