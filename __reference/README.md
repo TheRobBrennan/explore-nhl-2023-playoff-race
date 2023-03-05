@@ -221,3 +221,13 @@ Let's look at the URL - [https://statsapi.web.nhl.com/api/v1/schedule?season=202
 ![](./images/experiment-02-safari-example-nhl-schedule-data.png)
 
 Swing and a miss. We don't have any game details available to us. Let's try another approach.
+
+##### Add the linescore to our schedule
+
+We can add the linescore of the game by adding a new `&expand=schedule.linescore` parameter to our URL - [https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore](https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore) - and review the [JSON](./json/schedule-complete-expand-schedule-linescore-experiment-02.json) data it provides:
+
+![](./images/experiment-02-safari-example-nhl-schedule-data-expand-schedule-linescore.png)
+
+In this example, we are starting with the first preseason game of the year - on September 24th, 2022, between the Ottawa Senators and Toronto Maple Leafs.
+
+The 2022-2023 NHL season's regular season started on October 11th, 2022.
