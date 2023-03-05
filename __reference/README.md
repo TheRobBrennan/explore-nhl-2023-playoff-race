@@ -246,7 +246,7 @@ We can filter the results to specific team ID by adding a new `?teamId=55` param
 
 ![](./images/experiment-02-safari-example-nhl-schedule-data-expand-schedule-linescore-and-regular-season-games-seattle-kraken.png)
 
-We could also pass in multiple team IDs as `?teamId=55,6` to see regular season games for the Seattle Kraken (teamId 55) and Boston Bruins (teamId 6) - [https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R&teamId=55,6](https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R&teamId=55,6) - and review the [JSON]() data it provides:
+We could also pass in multiple team IDs as `?teamId=55,6` to see regular season games for the Seattle Kraken (teamId 55) and Boston Bruins (teamId 6) - [https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R&teamId=55,6](https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R&teamId=55,6) - and review the [JSON](./json/schedule-complete-expand-schedule-linescore-regular-season-games-seattle-kraken-boston-bruins-experiment-02.json) data it provides:
 
 ![](./images/experiment-02-safari-example-nhl-schedule-data-expand-schedule-linescore-and-regular-season-games-seattle-kraken-boston-bruins.png)
 
