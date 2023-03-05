@@ -209,3 +209,51 @@ If we look at a similar subset of data for Winnipeg - currently in second place 
           "lastUpdated": "2023-03-04T05:50:39Z"
         },
 ```
+
+### Experiment 02 - How might we view team points changing over a period of time?
+
+Let's explore using the `schedule` endpoint to see if we can dynamically access points earned for games earlier in the season.
+
+#### NHL 2022-2023 schedule
+
+Let's look at the URL - [https://statsapi.web.nhl.com/api/v1/schedule?season=20222023](https://statsapi.web.nhl.com/api/v1/schedule?season=20222023) - and the [JSON](./json/schedule-complete-experiment-02.json) data it provides:
+
+![](./images/experiment-02-safari-example-nhl-schedule-data.png)
+
+Swing and a miss. We don't have any game details available to us. Let's try another approach.
+
+##### Add the linescore to our schedule
+
+We can add the linescore of the game by adding a new `&expand=schedule.linescore` parameter to our URL - [https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore](https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore) - and review the [JSON](./json/schedule-complete-expand-schedule-linescore-experiment-02.json) data it provides:
+
+![](./images/experiment-02-safari-example-nhl-schedule-data-expand-schedule-linescore.png)
+
+In this example, we are starting with the first preseason game of the year - on September 24th, 2022, between the Ottawa Senators and Toronto Maple Leafs.
+
+##### Filter schedule to regular season games
+
+We can filter the results so that only regular season games are loaded by adding a new `&gameType=R` parameter to our URL - [https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R](https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R) - and review the [JSON](./json/schedule-complete-expand-schedule-linescore-regular-season-games-experiment-02.json) data it provides:
+
+![](./images/experiment-02-safari-example-nhl-schedule-data-expand-schedule-linescore-and-regular-season-games.png)
+
+The 2022-2023 NHL season's regular season started on October 7th, 2022.
+
+🎉 We can use this data to iterate over each game and dynamically keep track of points for each team in the conference. 🎉
+
+##### Filter schedule to specific teams
+
+We can filter the results to specific team ID by adding a new `?teamId=55` parameter to our URL - [https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R&teamId=55](https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R&teamId=55) - and review the [JSON](./json/schedule-complete-expand-schedule-linescore-regular-season-games-seattle-kraken-experiment-02.json) data it provides:
+
+![](./images/experiment-02-safari-example-nhl-schedule-data-expand-schedule-linescore-and-regular-season-games-seattle-kraken.png)
+
+We could also pass in multiple team IDs as `?teamId=55,6` to see regular season games for the Seattle Kraken (teamId 55) and Boston Bruins (teamId 6) - [https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R&teamId=55,6](https://statsapi.web.nhl.com/api/v1/schedule?season=20222023&expand=schedule.linescore&gameType=R&teamId=55,6) - and review the [JSON](./json/schedule-complete-expand-schedule-linescore-regular-season-games-seattle-kraken-boston-bruins-experiment-02.json) data it provides:
+
+![](./images/experiment-02-safari-example-nhl-schedule-data-expand-schedule-linescore-and-regular-season-games-seattle-kraken-boston-bruins.png)
+
+Let's find a way to identify Western Conference team IDs.
+
+We can use the `teams` endpoint - [https://statsapi.web.nhl.com/api/v1/teams](https://statsapi.web.nhl.com/api/v1/teams) - and review the [JSON](./json/teams-experiment-02.json) data it provides:
+
+![](./images/experiment-02-safari-example-nhl-teams-data.png)
+
+🎉 We can use this data to grab all of the team IDs we wish to track in our project. 🎉
