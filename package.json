@@ -1,0 +1,19 @@
+{
+  "name": "explore-nhl-2023-playoff-race",
+  "version": "0.0.0",
+  "description": "A Next.js app to explore the NHL 2023 playoff race",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRobBrennan/explore-nhl-2023-playoff-race.git"
+  },
+  "author": "Rob Brennan <rob@therobbrennan.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheRobBrennan/explore-nhl-2023-playoff-race/issues"
+  },
+  "homepage": "https://github.com/TheRobBrennan/explore-nhl-2023-playoff-race#readme"
+}
