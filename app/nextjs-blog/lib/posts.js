@@ -84,6 +84,21 @@ export function getAllPostIds() {
   });
 }
 
+// Like getStaticProps, getStaticPaths can fetch data from any data source. In our example, getAllPostIds (which is used by getStaticPaths) may fetch from an external API endpoint:
+// export async function getAllPostIds() {
+//   // Instead of the file system,
+//   // fetch post data from an external API endpoint
+//   const res = await fetch('..');
+//   const posts = await res.json();
+//   return posts.map((post) => {
+//     return {
+//       params: {
+//         id: post.id,
+//       },
+//     };
+//   });
+// }
+
 export async function getPostData(id) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
